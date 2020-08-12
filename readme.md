@@ -44,7 +44,8 @@ First, choose a folder where you want to save the exported button image files.
 The script processes the image by going through all `Layer Group`, making it
 visible and then exporting it to a .PNG file. The name of the group determines
 the export filename. For example the group name `btn_play [64]` will result in
-a file called `btn_play.png` with image size 64x64 pixels.
+a file called `btn_play.png` with image size 64 pixel width, new height is adjusted
+automatically according to aspect ratio of image.
 
 After you've exported all buttons, you can select different layers and then
 export again, for example to create a "highlight" version of each button.

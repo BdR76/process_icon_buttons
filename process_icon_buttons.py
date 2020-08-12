@@ -46,7 +46,9 @@ def process_iconbtn(image, img_path, name, postfix):
 	filename = "%s\%s.%s" % (img_path, img_name, "png")
 
 	# create selection based on path
-	pdb.gimp_rect_select(image, 0, 0, 1024, 1024, 2, 0, 0) # img, x, y, w, h, op (2=CHANNEL-OP-REPLACE), feather=0, feather-radius=0
+	w = image.width
+	h = image.height
+	pdb.gimp_rect_select(image, 0, 0, w, h, 2, 0, 0) # img, x, y, w, h, op (2=CHANNEL-OP-REPLACE), feather=0, feather-radius=0
 	
 	# copy and paste as new temporary image
 	# pdb.gimp_edit_copy(image.layers[0])
@@ -54,12 +56,11 @@ def process_iconbtn(image, img_path, name, postfix):
 	tmp_img = pdb.gimp_edit_paste_as_new()
 	
 	# resize new image
-	# w = tmp_img.width
-	# h = tmp_img.height
 	# pdb.gimp_progress_init("Scaling Image...",None)
 	if (wpx > 0):
+		wpy = int((float(h) / float(w)) * wpx)
 		pdb.gimp_context_set_interpolation(INTERPOLATION_LANCZOS)
-		pdb.gimp_image_scale(tmp_img, wpx, wpx)
+		pdb.gimp_image_scale(tmp_img, wpx, wpy)
 
 	# save to file and clean up temporary image
 	pdb.gimp_file_save(tmp_img, tmp_img.active_layer, filename, filename)
