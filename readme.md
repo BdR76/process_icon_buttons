@@ -5,7 +5,7 @@ This GIMP Python script can be used when designing button icons for games or
 websites. It automates the processing and resizing of the final button images,
 while keeping the high definition original image unchanged.
 
-![From GIMP v2.8 image to separate png files](/preview.png?raw=true "preview")
+![From GIMP image to separate png files](/preview.png?raw=true "preview")
 
 What is it
 ----------
@@ -26,7 +26,7 @@ selecting, resizing and exporting the buttons icon from a "master image" file.
 
 How to use it
 -------------
-Download and install [GIMP v2.8](https://www.gimp.org/) and copy the file
+Download and install [GIMP](https://www.gimp.org/) and copy the file
 `process_icon_buttons.py` into the following directory:
 
 	.\GIMP 2\lib\gimp\2.0\plug-ins\
@@ -62,7 +62,7 @@ then you will get the following error message:
 
 This is due to a [bug in GIMP](https://github.com/efexgee/mapper/issues/1).
 Simply select another layer, so a layer without a (-) or (+) symbol
-in front of it. Then try again and it should work fine.
+in front of it. Then try again and it should work correctly.
 
 
 Questions, comments -- Bas de Reuver (bdr1976@gmail.com)
